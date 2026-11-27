@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free My Android</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body class="wide">
+
+<div id="stage">
+  <div id="look"></div>
+  <div id="page"></div>
+  <div id="sheet"></div>
+  <div id="mini"></div>
+  <div id="toast"></div>
+</div>
+
+<!-- Only in a desktop browser (on the TV there is no such thing): switches for looking at the screens. -->
+<div id="bar">
+  <span class="label">Look</span>
+  <button type="button" data-look="quiet"><b>1</b> Quiet</button>
+  <button type="button" data-look="board"><b>2</b> Board</button>
+  <button type="button" data-look="list"><b>3</b> List</button>
+  <span class="label gap">Light</span>
+  <button type="button" data-mode="day">Day</button>
+  <button type="button" data-mode="night">Night</button>
+  <span class="keys">Arrows move · Enter is OK · Esc is Back</span>
+</div>
+<div id="pad">
+  <p class="what">A preview of Free My Android on a TV. The buttons below are the remote.</p>
+  <div class="looks">
+    <button type="button" data-look="quiet">Quiet</button>
+    <button type="button" data-look="board">Board</button>
+    <button type="button" data-look="list">List</button>
+  </div>
+  <div class="remote">
+    <button type="button" class="up" data-key="up" aria-label="Up"></button>
+    <button type="button" class="left" data-key="left" aria-label="Left"></button>
+    <button type="button" class="ok" data-key="ok">OK</button>
+    <button type="button" class="right" data-key="right" aria-label="Right"></button>
+    <button type="button" class="down" data-key="down" aria-label="Down"></button>
+  </div>
+  <div class="row">
+    <button type="button" data-key="back">Back</button>
+    <button type="button" data-mode="day">Day</button>
+    <button type="button" data-mode="night">Night</button>
+  </div>
+</div>
+
+<script src="tvlist.js"></script>
+<script src="mini.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

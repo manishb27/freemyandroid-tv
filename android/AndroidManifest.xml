@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Free My Android on a television: an ordinary app in the TV's apps row. It is not a home screen and takes nothing
+  over: the TV's own home screen (or Free My TV) stays as it is.
+
+  No INTERNET permission. Everything it shows is on the TV already, and nothing it knows leaves the TV.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.freemyandroid.tv"
+    android:versionCode="1"
+    android:versionName="0.1">
+
+    <!-- Android 11+: the apps in the apps row, so they can be listed and opened from here, and the television list's
+         packages by name, so "This TV" can read whether each one is on or switched off. Reading only. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <!--TV_LIST-->
+    </queries>
+
+    <uses-feature android:name="android.software.leanback" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+
+    <application
+        android:label="Free My Android"
+        android:icon="@drawable/icon"
+        android:banner="@drawable/banner"
+        android:allowBackup="false"
+        android:supportsRtl="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="Free My Android"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout|smallestScreenSize|uiMode|density|fontScale|locale|layoutDirection"
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

@@ -1,0 +1,6 @@
+android/out/
+*.apk
+*.keystore
+*.idsig
+__pycache__/
+.DS_Store
