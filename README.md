@@ -49,14 +49,27 @@ The app asks for no internet access. Nothing it shows leaves the television.
 
 ## Install
 
+**The easy way:** paste this into Claude or another AI assistant, which goes one step at a time:
+
+```text
+I want to install Free My Android TV on my Android TV. It is my own TV.
+
+Please read github.com/manishb27/-freemyandroid-tv and its CLAUDE.md, then walk me through it one step at a time: turning on network debugging on the TV, connecting to it from this computer with adb, and installing the app from the latest release. Tell me before you do anything on the TV.
+```
+
+**By hand.** Download `FreeMyAndroid-TV.apk` from the [latest release](https://github.com/manishb27/-freemyandroid-tv/releases).
+On the TV, switch on developer options and network debugging (where they are differs from one set to the next). Then,
+from a computer with `adb`, on the same network as the TV:
+
 From a computer with `adb`, on the same network as the TV, with network debugging on:
 
 ```sh
 adb connect <TV address>:5555
-adb install -r android/FreeMyAndroid-TV.apk
+adb install -r FreeMyAndroid-TV.apk
 ```
 
-It then appears in the TV's apps row as **Free My Android**.
+The TV may ask whether to allow debugging from this computer: say yes. The app then appears in the TV's apps row as
+**Free My Android**.
 
 ## Build
 
@@ -85,6 +98,12 @@ Enter and Esc are the remote.
 | `android/` | The Android app around them: one activity with a WebView, and a bridge that lists and opens the TV's apps and reads which are switched off. `build.sh` builds it |
 | `tools/` | `serve.py` (the browser preview) and `tvlist.py` (writes `web/tvlist.js` from Free My Android's television list) |
 | `docs/screens/` | The pictures in this README |
+
+## Phones and tablets
+
+The tool that cleans up a phone, a tablet or a television over ADB is **[Free My Android](https://github.com/manishb27/freemyandroid)**,
+in its own repository. This one is only the app that runs on the television. The website,
+[freemyandroid.com](https://freemyandroid.com), has both.
 
 ## Who
 

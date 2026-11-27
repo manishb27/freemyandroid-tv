@@ -17,3 +17,20 @@ it), label "Free My Android". It is not a home screen and must never take Home. 
   shows on that screen, opening apps, This TV and the Back key are not verified yet. Screenshots in `docs/screens/`
   were taken in a browser with sample app names and say so.
 - Keep the README honest: "being built" until it has been checked on a television.
+
+## Installing it for someone
+
+The person may not be technical. Say what you are about to do on their TV before you do it, and let them press the
+buttons on the TV.
+
+1. Check `adb` is on the computer (`adb version`). If not, help them install Android's platform-tools.
+2. On the TV: Settings → Device Preferences → About → press Build seven times; then Developer options → turn on USB
+   debugging and, where the set has it, network debugging (wording differs by brand). Find the TV's IP address under
+   Network.
+3. `adb connect <ip>:5555`. The TV shows "Allow USB debugging?": they choose Allow (and "Always allow").
+4. Download `FreeMyAndroid-TV.apk` from the latest release (`gh release download -R manishb27/-freemyandroid-tv`
+   or the Releases page) and check its SHA-256 against the release notes.
+5. `adb install -r FreeMyAndroid-TV.apk`. It appears in the apps row as Free My Android; open it with
+   `adb shell am start -n com.freemyandroid.tv/.MainActivity`.
+6. Never change anything else on the TV from here. Cleaning the TV up is the phone tool's job
+   (github.com/manishb27/freemyandroid), with its plan and its undo journal.
