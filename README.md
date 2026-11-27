@@ -52,9 +52,16 @@ The app asks for no internet access. Nothing it shows leaves the television.
 **The easy way:** paste this into Claude or another AI assistant, which goes one step at a time:
 
 ```text
-I want to install Free My Android TV on my Android TV. It is my own TV.
+Install Free My Android TV on my Android TV from this computer, then open Free My Android in my browser. Tell me before each step.
 
-Please read github.com/manishb27/-freemyandroid-tv and its CLAUDE.md, then walk me through it one step at a time: turning on network debugging on the TV, connecting to it from this computer with adb, and installing the app from the latest release. Tell me before you do anything on the TV.
+1. Check that adb, git and python3 are installed. Install whatever is missing.
+2. Ask me for the TV's IP address, then run: adb connect <IP>:5555 (I will press Allow on the TV).
+3. curl -LO https://github.com/manishb27/-freemyandroid-tv/releases/latest/download/FreeMyAndroid-TV.apk
+4. adb install -r FreeMyAndroid-TV.apk
+5. adb shell am start -n com.freemyandroid.tv/.MainActivity
+6. git clone https://github.com/manishb27/freemyandroid ~/freemyandroid (or git -C ~/freemyandroid pull), then: cd ~/freemyandroid && ./freemyandroid web
+
+Change nothing else on the TV.
 ```
 
 **By hand.** Download `FreeMyAndroid-TV.apk` from the [latest release](https://github.com/manishb27/-freemyandroid-tv/releases).
