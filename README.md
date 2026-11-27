@@ -49,7 +49,7 @@ The app asks for no internet access. Nothing it shows leaves the television.
 
 ## Install
 
-**The easy way:** paste this into Claude or another AI assistant, which goes one step at a time:
+**The easy way:** paste this into Claude Code or Codex (or another AI agent that can run commands), which goes one step at a time:
 
 ```text
 Install Free My Android TV on my Android TV from this computer, then open Free My Android in my browser. Tell me before each step.
