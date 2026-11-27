@@ -694,7 +694,8 @@
 
   function fit() {
     // A phone on its side has no height to spare: the picture gets all of it, and Home Settings changes the look.
-    var W = window.innerWidth, H = window.innerHeight, tall = !bare && H > W * 1.15, short = !tall && H < 520;
+    // The page's own box, not innerWidth: some TVs' WebViews report the layout viewport there, wider than the screen.
+    var W = document.documentElement.clientWidth || window.innerWidth, H = document.documentElement.clientHeight || window.innerHeight, tall = !bare && H > W * 1.15, short = !tall && H < 520;
     var bar = bare || tall || short ? 0 : 52;
     document.body.className = (tall ? 'tall' : 'wide') + (bare ? ' bare' : '') + (short ? ' short' : '');
     scale = Math.min(W / 1920, (H - bar) / 1080);
@@ -702,6 +703,10 @@
     stage.style.left = Math.round((W - 1920 * scale) / 2) + 'px';
     stage.style.top = tall ? '0px' : Math.round((H - bar - 1080 * scale) / 2) + 'px';
     $('pad').style.top = tall ? Math.round(1080 * scale) + 'px' : '';
+    if (window.FMA && window.FMA.log) {
+      window.FMA.log('fit ' + W + 'x' + H + ' dpr ' + window.devicePixelRatio + ' screen ' + screen.width + 'x' + screen.height +
+        ' doc ' + document.documentElement.clientWidth + 'x' + document.documentElement.clientHeight + ' scale ' + scale);
+    }
   }
 
   // MARK: - Start

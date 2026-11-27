@@ -13,8 +13,11 @@ it), label "Free My Android". It is not a home screen and must never take Home. 
   owner's OnePlus TV is signed with it.
 - `web/tvlist.js` comes from the phone tool's `data/packages/androidtv.json` (`tools/tvlist.py`): regenerate it when
   that list changes.
-- State (2026-11-27): installed on the owner's OnePlus Y Series (Android 11) and started without log errors; what it
-  shows on that screen, opening apps, This TV and the Back key are not verified yet. Screenshots in `docs/screens/`
+- State (2026-11-27): 0.2 tested on the owner's Xiaomi Mi TV (MiTV-AXSO0, Android 9, 1280 x 720, WebView 81): it fits
+  the screen, the remote moves through all three looks, the small apps open and close with Back, All apps lists and
+  opens the TV's apps, This TV reads real states (19 of 38 present, 9 off), and Back on the home leaves the app.
+  Two fixes came from that set: the wide viewport (the page measured 1920 wide) and flexbox gap (Chromium 81 has none:
+  use margins). The OnePlus Y Series has 0.1 installed and has not been checked on screen. Screenshots in `docs/screens/`
   were taken in a browser with sample app names and say so.
 - Keep the README honest: "being built" until it has been checked on a television.
 

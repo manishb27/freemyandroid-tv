@@ -13,8 +13,8 @@ One more app in the TV's apps row: the set's own home screen stays as it is.
 
 </div>
 
-> **Being built.** The app is installed on one television (a OnePlus Y Series, Android 11) and has not been checked
-> on its screen yet. The pictures here were taken in a browser, with sample app names; on a television the row holds
+> **Being built.** Version 0.2 has been tried on one television, a Xiaomi Mi TV (Android 9): the looks, the small apps,
+> All apps, This TV and Settings all worked with its remote. The pictures here were taken in a browser, with sample app names; on a television the row holds
 > that set's own apps.
 
 ## Three looks
@@ -116,7 +116,7 @@ in its own repository. This one is only the app that runs on the television. The
 
 ## Who
 
-Manish Babbar, Vaibhav Gupta, Pouya and Kartikaye Madhok.
+Manish Babbar, Vaibhav Gupta, Pouya Barrach-Yousefi and Kartikaye Madhok.
 
 ## Licence
 

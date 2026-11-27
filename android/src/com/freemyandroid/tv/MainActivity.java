@@ -52,8 +52,10 @@ public class MainActivity extends Activity {
         s.setAllowContentAccess(false);
         s.setAllowFileAccess(false);             // assets are still reachable at file:///android_asset
         s.setTextZoom(100);                      // the TV's font size setting would break a 1920 x 1080 layout
-        s.setUseWideViewPort(true);
-        s.setLoadWithOverviewMode(true);
+        // The page is laid out at the screen's own width and scales its 1920 x 1080 stage itself. A wide viewport
+        // made a Mi TV (Android 9, 1280 x 720) report 1920 as the width, and the stage was drawn unscaled and cut off.
+        s.setUseWideViewPort(false);
+        s.setLoadWithOverviewMode(false);
         web.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -163,6 +165,12 @@ public class MainActivity extends Activity {
                 // An empty answer: the page says it could not read them.
             }
             return out.toString();
+        }
+
+        /** A line in the TV's log (adb logcat -s FreeMyAndroid), for what the page measures on a real set. */
+        @JavascriptInterface
+        public void log(String line) {
+            android.util.Log.i("FreeMyAndroid", String.valueOf(line));
         }
 
         /** The set, for the "This TV" page. */

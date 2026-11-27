@@ -7,8 +7,8 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.freemyandroid.tv"
-    android:versionCode="1"
-    android:versionName="0.1">
+    android:versionCode="2"
+    android:versionName="0.2">
 
     <!-- Android 11+: the apps in the apps row, so they can be listed and opened from here, and the television list's
          packages by name, so "This TV" can read whether each one is on or switched off. Reading only. -->
