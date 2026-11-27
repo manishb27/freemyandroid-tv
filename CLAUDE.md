@@ -28,7 +28,7 @@ buttons on the TV.
    debugging and, where the set has it, network debugging (wording differs by brand). Find the TV's IP address under
    Network.
 3. `adb connect <ip>:5555`. The TV shows "Allow USB debugging?": they choose Allow (and "Always allow").
-4. Download `FreeMyAndroid-TV.apk` from the latest release (`gh release download -R manishb27/-freemyandroid-tv`
+4. Download `FreeMyAndroid-TV.apk` from the latest release (`gh release download -R manishb27/freemyandroid-tv`
    or the Releases page) and check its SHA-256 against the release notes.
 5. `adb install -r FreeMyAndroid-TV.apk`. It appears in the apps row as Free My Android; open it with
    `adb shell am start -n com.freemyandroid.tv/.MainActivity`.

@@ -4,6 +4,8 @@
 
 **Free My Android, as an app on the television.**
 
+Cleaning up a phone, a tablet or a TV is the other half: **[Free My Android](https://github.com/manishb27/freemyandroid)** · [freemyandroid.com](https://freemyandroid.com)
+
 Five small apps, three looks to choose from, and a page that shows which preinstalled apps on the set are switched off.
 One more app in the TV's apps row: the set's own home screen stays as it is.
 
@@ -56,7 +58,7 @@ Install Free My Android TV on my Android TV from this computer, then open Free M
 
 1. Check that adb, git and python3 are installed. Install whatever is missing.
 2. Ask me for the TV's IP address, then run: adb connect <IP>:5555 (I will press Allow on the TV).
-3. curl -LO https://github.com/manishb27/-freemyandroid-tv/releases/latest/download/FreeMyAndroid-TV.apk
+3. curl -LO https://github.com/manishb27/freemyandroid-tv/releases/latest/download/FreeMyAndroid-TV.apk
 4. adb install -r FreeMyAndroid-TV.apk
 5. adb shell am start -n com.freemyandroid.tv/.MainActivity
 6. git clone https://github.com/manishb27/freemyandroid ~/freemyandroid (or git -C ~/freemyandroid pull), then: cd ~/freemyandroid && ./freemyandroid web
@@ -64,7 +66,7 @@ Install Free My Android TV on my Android TV from this computer, then open Free M
 Change nothing else on the TV.
 ```
 
-**By hand.** Download `FreeMyAndroid-TV.apk` from the [latest release](https://github.com/manishb27/-freemyandroid-tv/releases).
+**By hand.** Download `FreeMyAndroid-TV.apk` from the [latest release](https://github.com/manishb27/freemyandroid-tv/releases).
 On the TV, switch on developer options and network debugging (where they are differs from one set to the next). Then,
 from a computer with `adb`, on the same network as the TV:
 
